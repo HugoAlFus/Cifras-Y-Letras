@@ -11,7 +11,7 @@ body {
 .inputs {
   display: flex;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .inputs input {
   width: 40px;
@@ -22,9 +22,21 @@ body {
   border-radius: 8px;
   outline: none;
   transition: border-color 0.2s;
+  text-transform: uppercase;
 }
 .inputs input:focus {
   border-color: #007bff;
+}
+.error {
+  border-color: rgb(252, 72, 72) !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  height: 16px;
+  margin: 0 0 8px 0;
+  align-self: flex-start;
 }
 button {
   padding: 10px 20px;

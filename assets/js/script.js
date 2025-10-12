@@ -35,4 +35,5 @@ function validarInput(input) {
   }
 }
 
+
 botonEnviar.addEventListener("click", enviarLetras);

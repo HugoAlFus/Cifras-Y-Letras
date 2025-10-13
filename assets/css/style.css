@@ -38,16 +38,50 @@ body {
   margin: 0 0 8px 0;
   align-self: flex-start;
 }
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin-top: 20px;
+}
+
 button {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
-  background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: background-color 0.2s;
 }
-button:hover {
+
+#enviar {
+  background-color: #007bff;
+}
+#enviar:hover {
   background-color: #0056b3;
+}
+
+#reset {
+  background-color: #ff4c4c;
+}
+#reset:hover {
+  background-color: #cc3b3b;
+}
+
+.result {
+  max-height: 400px; /* altura fija */
+  overflow-y: auto; /* barra de scroll interna */
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.result p {
+  margin: 2px 0;
+  font-size: 14px;
 }

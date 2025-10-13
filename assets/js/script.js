@@ -93,7 +93,7 @@ function enviarLetras() {
 }
 
 function agregarResultado(resultado, letrasDisponibles) {
-  divResultado.innerHTML = ""; // limpia
+  divResultado.innerHTML = "";
 
   const titulo = document.createElement("h2");
   titulo.textContent = `Resultados para letras: ${letrasDisponibles}`;
@@ -127,13 +127,6 @@ function agregarResultado(resultado, letrasDisponibles) {
     parrafoPalabra.classList.add("palabra");
     divResultado.appendChild(parrafoPalabra);
   });
-
-  if (resultado.length > maxMostrar) {
-    const aviso = document.createElement("p");
-    aviso.style.color = "gray";
-    aviso.textContent = `Se muestran las primeras ${maxMostrar} de ${resultado.length} palabras.`;
-    divResultado.appendChild(aviso);
-  }
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 }

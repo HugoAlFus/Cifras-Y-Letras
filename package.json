@@ -1,0 +1,12 @@
+{
+  "name": "cifras-y-letras",
+  "version": "1.0.0",
+  "description": "Demo interactivo en JavaScript para practicar manipulación del DOM.",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8080"
+  },
+  "keywords": ["javascript","demo","frontend","github-pages"],
+  "author": "HugoAlFus",
+  "license": "MIT"
+}

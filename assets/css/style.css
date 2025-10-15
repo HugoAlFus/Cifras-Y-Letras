@@ -1,6 +1,7 @@
 .root,
 body {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,6 +23,13 @@ body {
   margin-bottom: 10px;
   flex-wrap: wrap;
   justify-content: center;
+}
+.inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
 }
 .inputs input {
   width: 40px;
@@ -46,17 +54,19 @@ body {
   color: red;
   font-size: 12px;
   height: 16px;
-  margin: 0 0 8px 0;
-  align-self: flex-start;
+  margin: 6px 0 8px 0;
+  text-align: center;
+  width: 100%;
 }
 
 .botones {
   display: flex;
-  gap: 12px;
+  gap: 20px;
   justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 640px;
-  margin-top: 20px;
+  margin: 20px auto 0 auto;
   flex-wrap: wrap;
 }
 
@@ -68,7 +78,13 @@ button {
   color: white;
   cursor: pointer;
   transition: background-color 0.2s;
-  min-width: 120px;
+  min-width: 112px;
+  max-width: 220px;
+  flex: 0 0 auto;
+  background-color: #007bff;
+}
+button:hover {
+  background-color: #0056b3;
 }
 
 #enviar {
@@ -102,6 +118,43 @@ button {
   font-size: 14px;
 }
 
+/* Info blocks used in letras.html */
+.info-descripcion,
+.info-funcionamiento,
+.info-reset {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 12px 14px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  color: #212529;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 6px 0 12px 0;
+}
+
+.info-descripcion strong,
+.info-funcionamiento strong,
+.info-reset strong {
+  color: #0d6efd;
+}
+
+.info-funcionamiento em {
+  font-style: italic;
+  color: #333;
+}
+
+@media (max-width: 480px) {
+  .info-descripcion,
+  .info-funcionamiento,
+  .info-reset {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .inputs input {
@@ -112,13 +165,16 @@ button {
   }
 
   .botones {
-    gap: 8px;
+    gap: 10px;
+    align-items: stretch;
+    flex-direction: column;
   }
 
   button {
-    min-width: 100px;
-    padding: 10px 12px;
-    font-size: 14px;
+    min-width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: 10px;
   }
 
   .error-message {
@@ -139,4 +195,33 @@ button {
     padding: 8px 10px;
     font-size: 13px;
   }
+}
+
+/* Footer socials */
+.socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.social-link {
+  color: #212529;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.social-link:hover {
+  background-color: rgba(13,110,253,0.08);
+  color: #0d6efd;
+}
+
+@media (max-width:480px){
+  .social-link{ width:32px; height:32px }
 }

@@ -3,48 +3,62 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Cifras y Letras — demo interactivo" />
-    <title>Cifras y Letras</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta
+      name="description"
+      content="Cifras y Letras — demo interactivo en JavaScript para practicar manipulación del DOM y validación de entradas."
+    />
+    <meta name="author" content="HugoAlFus" />
+    <meta
+      name="keywords"
+      content="javascript, demo, frontend, html, css, cifras, letras"
+    />
+    <meta name="theme-color" content="#0d6efd" />
+    <title>Letras</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
     <header>
-      <h1 style="margin: 24px 0 8px">Cifras y Letras</h1>
+      <h1>Solucionador letras</h1>
     </header>
 
-    <main
-      style="
-        width: 100%;
-        max-width: 900px;
-        text-align: center;
-        padding: 20px;
-        margin: 0 auto;
-      "
-    >
-      <p style="font-size: 18px; color: #333">
-        Elige una sección para comenzar el demo
+    <main>
+      <p class="info-descripcion">
+        <strong>Descripción:</strong> Este fragmento corresponde a una sección
+        donde se deben añadir las letras correspondientes para el juego de
+        <em>Cifras y Letras</em>.
       </p>
-
-      <div
-        class="botones"
-        style="justify-content: center; align-items: center; margin-top: 20px"
-      >
-        <a
-          href="./letras/letras.html"
-          class="btn-section"
-          style="text-decoration: none"
-        >
-          <button id="btn-letras" aria-label="Ir a Letras">Letras</button>
-        </a>
-
-        <a
-          href="./cifras/cifras.html"
-          class="btn-section"
-          style="text-decoration: none"
-        >
-          <button id="btn-cifras" aria-label="Ir a Cifras">Cifras</button>
-        </a>
+      <p class="info-funcionamiento">
+        <strong>Funcionamiento:</strong> El usuario debe ingresar las letras en
+        el espacio proporcionado y, al presionar el botón de
+        <strong>Enviar</strong>, se procesarán para continuar con la dinámica
+        del juego.
+      </p>
+      <p class="info-reset">
+        El botón <strong>Limpiar</strong> borra todas las letras ingresadas y
+        resultados.
+      </p>
+      <div class="inputs-wrapper">
+        <div class="inputs">
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+        </div>
+        <p class="error-message"></p>
       </div>
+      <div class="botones">
+        <button id="enviar">Enviar</button>
+        <button id="reset">Limpiar</button>
+      </div>
+
+      <div id="result" class="result"></div>
     </main>
 
     <footer style="margin-top: 24px">
@@ -137,8 +151,8 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+    <script src="../assets/js/script.js">
+      document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </body>
 </html>

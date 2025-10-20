@@ -118,6 +118,13 @@ button:hover {
   font-size: 14px;
 }
 
+.palabra{
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+.palabra:hover{ background-color: rgba(13,110,253,0.06); }
+
 /* Info blocks used in letras.html */
 .info-descripcion,
 .info-funcionamiento,

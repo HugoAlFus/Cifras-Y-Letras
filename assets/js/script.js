@@ -8,13 +8,24 @@ let divResultado = document.getElementById("result");
 let botonLimpiar = document.getElementById("reset");
 
 async function cargarDiccionario() {
-  const res = await fetch("./assets/resources/palabras.txt");
-  const txt = await res.text();
-  palabras = txt
+  try {
+    const res = await fetch("/assets/resources/palabras.txt");
+    if (!res.ok) {
+      console.error('Error al cargar el diccionario:', res.status, res.statusText);
+      const txtErr = await res.text();
+      console.debug('Respuesta recibida:', txtErr.slice(0, 200));
+      return;
+    }
+
+    const txt = await res.text();
+    palabras = txt
     .split("\n")
     .map((s) => s.trim())
     .filter(Boolean);
-  console.log("📘 Diccionario cargado:", palabras.length, "palabras");
+    console.log("📘 Diccionario cargado:", palabras.length, "palabras");
+  } catch (err) {
+    console.error('Excepción cargando diccionario:', err);
+  }
 }
 
 function normalizar(s) {
@@ -103,6 +114,7 @@ function agregarResultado(resultado, letrasDisponibles) {
     const sinRes = document.createElement("p");
     sinRes.textContent = "No se encontraron palabras con esas letras.";
     divResultado.appendChild(sinRes);
+
     return;
   }
 
@@ -125,6 +137,8 @@ function agregarResultado(resultado, letrasDisponibles) {
     const parrafoPalabra = document.createElement("p");
     parrafoPalabra.textContent = palabra.toUpperCase();
     parrafoPalabra.classList.add("palabra");
+    parrafoPalabra.title = 'Haz clic para buscar definición (RAE)';
+    parrafoPalabra.addEventListener('click', buscarSignificadoPalabra);
     divResultado.appendChild(parrafoPalabra);
   });
 
@@ -134,6 +148,23 @@ function agregarResultado(resultado, letrasDisponibles) {
 function limpiarInputs() {
   arrayInputs.forEach((input) => (input.value = ""));
   divResultado.innerHTML = "";
+}
+
+function buscarSignificadoPalabra(){
+
+  let palabra = null;
+
+  if (this && this.classList && this.classList.contains('palabra')) {
+    palabra = this.textContent.trim();
+  } else {
+    palabra = window.prompt('Introduce la palabra a buscar en el diccionario (RAE):');
+    if (!palabra) return;
+  }
+
+  const palabraNorm = normalizar(palabra).toLowerCase().replace(/[^a-zñ]/g, '');
+  const url = `https://dle.rae.es/${encodeURIComponent(palabraNorm)}`;
+  window.open(url, '_blank', 'noopener');
+
 }
 
 cargarDiccionario();

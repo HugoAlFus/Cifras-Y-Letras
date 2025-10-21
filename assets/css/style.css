@@ -222,11 +222,27 @@ button:hover {
   height: 36px;
   border-radius: 6px;
   transition: background-color 0.15s, color 0.15s;
+  vertical-align: middle;
+  line-height: 1;
+  text-decoration: none !important;
+  border: none;
 }
 
 .social-link:hover {
   background-color: rgba(13,110,253,0.08);
   color: #0d6efd;
+  text-decoration: none !important;
+}
+
+/* Fix FontAwesome icon alignment and remove underline */
+.social-link .fa-brands,
+.social-link .fa-solid,
+.social-link .fa-regular {
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 @media (max-width:480px){

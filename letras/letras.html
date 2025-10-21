@@ -1,158 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Cifras y Letras — demo interactivo en JavaScript para practicar manipulación del DOM y validación de entradas."
-    />
-    <meta name="author" content="HugoAlFus" />
-    <meta
-      name="keywords"
-      content="javascript, demo, frontend, html, css, cifras, letras"
-    />
-    <meta name="theme-color" content="#0d6efd" />
-    <title>Letras</title>
 
-    <link rel="stylesheet" href="../assets/css/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Solucionador letras</h1>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Cifras y Letras — demo interactivo en JavaScript para practicar manipulación del DOM y validación de entradas." />
+  <meta name="author" content="HugoAlFus" />
+  <meta name="keywords" content="javascript, demo, frontend, html, css, cifras, letras" />
+  <meta name="theme-color" content="#0d6efd" />
+  <title>Letras</title>
 
-    <main>
-      <p class="info-descripcion">
-        <strong>Descripción:</strong> Este fragmento corresponde a una sección
-        donde se deben añadir las letras correspondientes para el juego de
-        <em>Cifras y Letras</em>.
-      </p>
-      <p class="info-funcionamiento">
-        <strong>Funcionamiento:</strong> El usuario debe ingresar las letras en
-        el espacio proporcionado y, al presionar el botón de
-        <strong>Enviar</strong>, se procesarán para continuar con la dinámica
-        del juego.
-      </p>
-      <p class="info-reset">
-        El botón <strong>Limpiar</strong> borra todas las letras ingresadas y
-        resultados.
-      </p>
-      <div class="inputs-wrapper">
-        <div class="inputs">
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-          <input type="text" maxlength="1" />
-        </div>
-        <p class="error-message"></p>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Solucionador letras</h1>
+  </header>
+
+  <main>
+    <p class="info-descripcion">
+      <strong>Descripción:</strong> Este fragmento corresponde a una sección
+      donde se deben añadir las letras correspondientes para el juego de
+      <em>Cifras y Letras</em>.
+    </p>
+    <p class="info-funcionamiento">
+      <strong>Funcionamiento:</strong> El usuario debe ingresar las letras en
+      el espacio proporcionado y, al presionar el botón de
+      <strong>Enviar</strong>, se procesarán para continuar con la dinámica
+      del juego.
+    </p>
+    <p class="info-reset">
+      El botón <strong>Limpiar</strong> borra todas las letras ingresadas y
+      resultados.
+    </p>
+    <div class="inputs-wrapper">
+      <div class="inputs">
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
+        <input type="text" maxlength="1" />
       </div>
-      <div class="botones">
-        <button id="enviar">Enviar</button>
-        <button id="reset">Limpiar</button>
-      </div>
+      <p class="error-message"></p>
+    </div>
+    <div class="botones">
+      <button id="enviar">Enviar</button>
+      <button id="reset">Limpiar</button>
+    </div>
 
-      <div id="result" class="result"></div>
-    </main>
+    <div id="result" class="result"></div>
+  </main>
 
-    <footer style="margin-top: 24px">
-      <p>
-        &copy; <span id="year"></span> HugoAlFus. Todos los derechos reservados.
-      </p>
+  <footer style="margin-top: 24px">
+    <p>
+      &copy; <span id="year"></span> HugoAlFus. Todos los derechos reservados.
+    </p>
 
-      <div class="socials" aria-label="Redes sociales">
-        <a
-          href="https://github.com/HugoAlFus"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="GitHub"
-        >
-          <!-- Github SVG -->
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.3 1.2-3.11-.12-.29-.52-1.45.11-3.02 0 0 .98-.31 3.22 1.19a11.2 11.2 0 0 1 2.94-.4c.99 0 1.99.13 2.94.4 2.23-1.5 3.2-1.19 3.2-1.19.63 1.57.24 2.73.12 3.02.75.81 1.2 1.85 1.2 3.11 0 4.43-2.69 5.4-5.26 5.68.42.36.8 1.08.8 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.2.68.8.56A10.53 10.53 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"
-            />
-          </svg>
-        </a>
+    <div class="socials" aria-label="Redes sociales">
+      <a href="https://github.com/HugoAlFus" target="_blank" class="social-link" aria-label="GitHub"><i
+          class="fa-brands fa-github"></i></a>
 
-        <a
-          href="https://www.linkedin.com/in/hugoalmodovar/"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="LinkedIn"
-        >
-          <!-- linkedin SVG -->
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4zM8.5 8.5h3.8v2.06h.05c.53-1 1.82-2.06 3.75-2.06 4.01 0 4.75 2.64 4.75 6.07V24h-4v-7.06c0-1.68-.03-3.84-2.34-3.84-2.34 0-2.69 1.82-2.69 3.7V24h-4z"
-            />
-          </svg>
-        </a>
+      <a href="https://www.linkedin.com/in/hugoalmodovar/" target="_blank" rel="noopener" class="social-link"
+        aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i></a>
 
-        <a
-          href="https://hugoalfus.github.io/"
-          target="_blank"
-          rel="noopener"
-          class="social-link"
-          aria-label="Sitio web personal"
-        >
-          <!-- Web SVG -->
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M3.9 12a5 5 0 0 1 7.07-7.07l1.41 1.41-1.41 1.41-1.41-1.41A3 3 0 1 0 9.36 12l1.41-1.41L12.18 12 9.95 14.23 8.54 12.82 10 11.36A5 5 0 0 1 3.9 12zM21.07 11.07a5 5 0 0 1-7.07 7.07l-1.41-1.41 1.41-1.41 1.41 1.41A3 3 0 1 0 14.64 12l-1.41 1.41L11.82 12l2.23-2.23 1.41 1.41L15.18 12A5 5 0 0 1 21.07 11.07z"
-            />
-          </svg>
-        </a>
+      <a href="https://hugoalfus.github.io/" target="_blank" rel="noopener" class="social-link"
+        aria-label="Sitio web personal"><i class="fa-solid fa-globe"></i>
+      </a>
 
-        <a
-          href="mailto:hugalmodovarfus@gmail.com"
-          class="social-link"
-          aria-label="Enviar correo"
-        >
-          <!-- Email SVG -->
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2l-8 5L4 6h16zM4 18V8l8 5 8-5v10H4z"
-            />
-          </svg>
-        </a>
-      </div>
-    </footer>
+      <a href="mailto:hugalmodovarfus@gmail.com" class="social-link" aria-label="Enviar correo">
+        <i class="fa-regular fa-envelope"></i></a>
+    </div>
+  </footer>
 
-    <script src="../assets/js/script.js">
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <script src="../assets/js/script.js">
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
 </html>
